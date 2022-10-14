@@ -14,6 +14,21 @@ public class CarInsurance {
 		this.marital_status = marital_status;
 		this.valid_license = valid_license;
 	}
+	public double calcularBase() {
+		if(this.age<80 && this.valid_license) {
+			if (this.sex=='M' && !this.marital_status && this.age<25) {
+				this.base_premium+=1500;
+			}if(this.sex=='F' || this.marital_status){
+				this.base_premium-=200;
+			}if(this.age>=45 && this.age<65){
+				this.base_premium-=100;
+			}
+			return this.base_premium;
+			
+		}
+		
+		return -1;
+	}
 
 	public int getAge() {
 		return age;
