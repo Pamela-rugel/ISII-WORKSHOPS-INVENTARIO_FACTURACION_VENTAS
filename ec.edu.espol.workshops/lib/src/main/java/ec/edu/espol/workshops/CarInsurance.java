@@ -2,7 +2,7 @@ package ec.edu.espol.workshops;
 
 public class CarInsurance {
 	int age;
-	String sex;
+	char sex;
 	boolean marital_status;
 
 }
