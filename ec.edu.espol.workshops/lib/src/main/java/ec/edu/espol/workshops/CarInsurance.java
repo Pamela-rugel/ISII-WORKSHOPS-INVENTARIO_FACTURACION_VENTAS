@@ -9,11 +9,15 @@ public class CarInsurance {
 	private double base_premium = 500;
 	
 	public CarInsurance(int age, char sex, boolean marital_status, boolean valid_license) {
-		this.age = age;
-		this.sex = sex;
-		this.marital_status = marital_status;
-		this.valid_license = valid_license;
+		
+			this.age = age;
+			this.sex = sex;
+			this.marital_status = marital_status;
+			this.valid_license = valid_license;
+		
 	}
+
+
 	public double calcularBase() {
 		if(this.age<80 && this.valid_license) {
 			if (this.sex=='M' && !this.marital_status && this.age<25) {
@@ -70,6 +74,17 @@ public class CarInsurance {
 		this.base_premium = base_premium;
 	}
 	
+	public int validarEdad(String variable) {
+		try {
+	    	 Integer.parseInt(variable);
+	    	 return 0;    	 	    	
+	    }catch(NumberFormatException ex) {
+	   	    return -1;
+	    }
+		
+	}
 	
-	
+		
 }
+
+
