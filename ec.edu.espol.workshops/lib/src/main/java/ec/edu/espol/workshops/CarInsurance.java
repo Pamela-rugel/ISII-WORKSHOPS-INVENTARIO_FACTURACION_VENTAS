@@ -1,24 +1,39 @@
 package ec.edu.espol.workshops;
 
-public class CarInsurance {
+/**
+*
+*
+* @author Dennisse, Pamela y Alejandra
+*/
 
-	private int age;
-	private char sex;
-	private boolean marital_status;
-	private boolean valid_license;
-	private double base_premium = 500;
+public class CarInsurance {
 	
-	public CarInsurance(int age, char sex, boolean marital_status, boolean valid_license) {
+	private int age; // return an integer
+	private char sex; // Return F, M 
+	private boolean marital_status; // Return true or false
+	private boolean valid_license;  //Return true or false
+	private double base_premium = 500; //constant value
+	
+	
+	/**
+	* @param age
+	*  @param sex
+	*  @param marital_status
+	*  @param valid_license
+	*  @param base_premium
+	*/
+	
+	public CarInsurance(int age, char sex, boolean marital_status, boolean valid_license) { //constructor
 		
 			this.age = age;
 			this.sex = sex;
 			this.marital_status = marital_status;
-			this.valid_license = valid_license;
+			this.valid_license = valid_license; // Return true or false
 		
 	}
 
-
-	public double calcularBase() {
+ 
+	public double calcularBase() { // Return base_premiun 
 		if(this.age<80 && this.valid_license) {
 			if (this.sex=='M' && !this.marital_status && this.age<25) {
 				this.base_premium+=1500;
@@ -69,12 +84,12 @@ public class CarInsurance {
 	public double getBase_premium() {
 		return base_premium;
 	}
-
+	
 	public void setBase_premium(double base_premium) {
 		this.base_premium = base_premium;
 	}
 	
-	public int validarEdad(String variable) {
+	public int validarEdad(String variable) { // validate the # of age
 		try {
 	    	 Integer.parseInt(variable);
 	    	 return 0;    	 	    	
