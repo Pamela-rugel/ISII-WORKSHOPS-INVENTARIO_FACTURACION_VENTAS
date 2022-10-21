@@ -1,48 +1,56 @@
 package ec.edu.espol.workshops;
 
 /**
- * Esta clase define el objeto CarInsurance para el calculo de un seguro de un carro
+
+ * Class CarInsurance.
+
  * @author Alejandra Quimi 
  *
  */
 
 public class CarInsurance {
-
-	private int age;
+	private int age; 
 	private char sex;
 	private boolean maritalStatus;
 	private boolean validLicense;
-	private double basePremium = 500;
+	private double basePremium = 500;	
 	/**
-	 * 
-	 * @param age
-	 * @param sex
-	 * @param maritalStatus
-	 * @param validLicense
+	 
+	 * Constructor for car insurance class.
+
+	 * @param age represent age
+	 * @param sex represent sex
+	 * @param maritalStatus represent maritalStatus
+	 * @param validLicense represent validLicense
+	 * @throws Exception when is null
 	 */
+	
 	public CarInsurance(int age, char sex, boolean maritalStatus, boolean validLicense) {
 		
-			this.age = age;
-			this.sex = sex;
-			this.maritalStatus = maritalStatus;
-			this.validLicense = validLicense;
+		this.age = age;
+		this.sex = sex;
+		this.maritalStatus = maritalStatus;
+		this.validLicense = validLicense;
 		
 	}
 
 	/**
-	 * 
-	 * @return
+
+	 * Method to calculate the base and return an double.
+
+	 * @return Double
 	 */
+	
 	public double calcularBase() {
-		if(this.age<80 && this.validLicense) {
-			if (this.sex=='M' && !this.maritalStatus && this.age<25) {
-				this.basePremium+=1500;
+		if (this.age < 80 && this.validLicense) {
+			if (this.sex == 'M' && !this.maritalStatus && this.age < 25) {
+				this.basePremium += 1500;
 			}
-			if(this.sex=='F' || this.maritalStatus){
-				this.basePremium-=200;
+			if (this.sex == 'F' || this.maritalStatus) {
+				this.basePremium -= 200;
 			}
-			if(this.age>=45 && this.age<65){
-				this.basePremium-=100;
+			if (this.age >= 45 && this.age < 65) {
+				this.basePremium -= 100;
 			}
 			return this.basePremium;
 			
@@ -86,21 +94,25 @@ public class CarInsurance {
 	public double getbasePremium() {
 		return basePremium;
 	}
-
+	
 	public void setbasePremium(double basePremium) {
 		this.basePremium = basePremium;
 	}
+	
 	/**
-	 * 
-	 * @param variable
-	 * @return
+
+	 * Method to validate age.
+
+	 * @param variable represent variable
+	 * @return Integer
+	 * @throws Exception when variable is null
 	 */
 	
 	public int validarEdad(String variable) {
 		try {
 	    	 Integer.parseInt(variable);
 	    	 return 0;    	 	    	
-	    }catch(NumberFormatException ex) {
+	    } catch (NumberFormatException ex) {
 	   	    return -1;
 	    }
 		
