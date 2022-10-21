@@ -1,33 +1,50 @@
 package ec.edu.espol.workshops;
 
+/**
+ * Esta clase define el objeto CarInsurance para el calculo de un seguro de un carro
+ * @author Alejandra Quimi 
+ *
+ */
+
 public class CarInsurance {
 
 	private int age;
 	private char sex;
-	private boolean marital_status;
-	private boolean valid_license;
-	private double base_premium = 500;
-	
-	public CarInsurance(int age, char sex, boolean marital_status, boolean valid_license) {
+	private boolean maritalStatus;
+	private boolean validLicense;
+	private double basePremium = 500;
+	/**
+	 * 
+	 * @param age
+	 * @param sex
+	 * @param maritalStatus
+	 * @param validLicense
+	 */
+	public CarInsurance(int age, char sex, boolean maritalStatus, boolean validLicense) {
 		
 			this.age = age;
 			this.sex = sex;
-			this.marital_status = marital_status;
-			this.valid_license = valid_license;
+			this.maritalStatus = maritalStatus;
+			this.validLicense = validLicense;
 		
 	}
 
-
+	/**
+	 * 
+	 * @return
+	 */
 	public double calcularBase() {
-		if(this.age<80 && this.valid_license) {
-			if (this.sex=='M' && !this.marital_status && this.age<25) {
-				this.base_premium+=1500;
-			}if(this.sex=='F' || this.marital_status){
-				this.base_premium-=200;
-			}if(this.age>=45 && this.age<65){
-				this.base_premium-=100;
+		if(this.age<80 && this.validLicense) {
+			if (this.sex=='M' && !this.maritalStatus && this.age<25) {
+				this.basePremium+=1500;
 			}
-			return this.base_premium;
+			if(this.sex=='F' || this.maritalStatus){
+				this.basePremium-=200;
+			}
+			if(this.age>=45 && this.age<65){
+				this.basePremium-=100;
+			}
+			return this.basePremium;
 			
 		}
 		
@@ -50,29 +67,34 @@ public class CarInsurance {
 		this.sex = sex;
 	}
 
-	public boolean isMarital_status() {
-		return marital_status;
+	public boolean ismaritalStatus() {
+		return maritalStatus;
 	}
 
-	public void setMarital_status(boolean marital_status) {
-		this.marital_status = marital_status;
+	public void setmaritalStatus(boolean maritalStatus) {
+		this.maritalStatus = maritalStatus;
 	}
 
-	public boolean isValid_license() {
-		return valid_license;
+	public boolean isvalidLicense() {
+		return validLicense;
 	}
 
-	public void setValid_license(boolean valid_license) {
-		this.valid_license = valid_license;
+	public void setvalidLicense(boolean validLicense) {
+		this.validLicense = validLicense;
 	}
 
-	public double getBase_premium() {
-		return base_premium;
+	public double getbasePremium() {
+		return basePremium;
 	}
 
-	public void setBase_premium(double base_premium) {
-		this.base_premium = base_premium;
+	public void setbasePremium(double basePremium) {
+		this.basePremium = basePremium;
 	}
+	/**
+	 * 
+	 * @param variable
+	 * @return
+	 */
 	
 	public int validarEdad(String variable) {
 		try {
