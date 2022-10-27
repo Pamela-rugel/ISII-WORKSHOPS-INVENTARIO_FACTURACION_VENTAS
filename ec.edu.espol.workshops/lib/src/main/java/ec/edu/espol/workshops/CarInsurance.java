@@ -27,7 +27,10 @@ public class CarInsurance {
 	
 	public CarInsurance(int age, char sex, boolean maritalStatus, boolean validLicense) {
 		
-		this.age = age;
+		
+		this.age=age;
+		
+
 		this.sex = sex;
 		this.maritalStatus = maritalStatus;
 		this.validLicense = validLicense;
@@ -108,10 +111,10 @@ public class CarInsurance {
 	 * @throws Exception when variable is null
 	 */
 	
-	public int validarEdad(String variable) {
+	public static int validarEdad(String variable) {
 		try {
-	    	 Integer.parseInt(variable);
-	    	 return 0;    	 	    	
+	    	 
+	    	 return Integer.parseInt(variable); 	 	    	
 	    } catch (NumberFormatException ex) {
 	   	    return -1;
 	    }
