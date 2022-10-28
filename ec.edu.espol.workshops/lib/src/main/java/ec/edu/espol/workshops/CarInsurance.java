@@ -1,48 +1,56 @@
 package ec.edu.espol.workshops;
 
 /**
-*
-*
-* @author Dennisse, Pamela y Alejandra
-*/
+ * Class CarInsurance.
+ * @author Dennisse Aguirre, Pamela Rugel, Alejandra Quimi
+ *
+ */
 
 public class CarInsurance {
-	
-	private int age; // return an integer
-	private char sex; // Return F, M 
-	private boolean marital_status; // Return true or false
-	private boolean valid_license;  //Return true or false
-	private double base_premium = 500; //constant value
-	
-	
+	private int age; 
+	private char sex;
+	private boolean maritalStatus;
+	private boolean validLicense;
+	private double basePremium = 500;	
 	/**
-	* @param age
-	*  @param sex
-	*  @param marital_status
-	*  @param valid_license
-	*  @param base_premium
-	*/
+	 
+	 * Constructor for car insurance class.
+	 * @param age represent age
+	 * @param sex represent sex
+	 * @param maritalStatus represent maritalStatus
+	 * @param validLicense represent validLicense
+	 * @throws Exception when is null
+	 */
 	
-	public CarInsurance(int age, char sex, boolean marital_status, boolean valid_license) { //constructor
+	public CarInsurance(int age, char sex, boolean maritalStatus, boolean validLicense) {
 		
-			this.age = age;
-			this.sex = sex;
-			this.marital_status = marital_status;
-			this.valid_license = valid_license; // Return true or false
+		
+		this.age=age;
+		
+
+		this.sex = sex;
+		this.maritalStatus = maritalStatus;
+		this.validLicense = validLicense;
 		
 	}
 
- 
-	public double calcularBase() { // Return base_premiun 
-		if(this.age<80 && this.valid_license) {
-			if (this.sex=='M' && !this.marital_status && this.age<25) {
-				this.base_premium+=1500;
-			}if(this.sex=='F' || this.marital_status){
-				this.base_premium-=200;
-			}if(this.age>=45 && this.age<65){
-				this.base_premium-=100;
+	/**
+	 * Method to calculate the base and return an double.
+	 * @return Double
+	 */
+	
+	public double calcularBase() {
+		if (this.age < 80 && this.validLicense) {
+			if (this.sex == 'M' && !this.maritalStatus && this.age < 25) {
+				this.basePremium += 1500;
 			}
-			return this.base_premium;
+			if (this.sex == 'F' || this.maritalStatus) {
+				this.basePremium -= 200;
+			}
+			if (this.age >= 45 && this.age < 65) {
+				this.basePremium -= 100;
+			}
+			return this.basePremium;
 			
 		}
 		
@@ -65,35 +73,41 @@ public class CarInsurance {
 		this.sex = sex;
 	}
 
-	public boolean isMarital_status() {
-		return marital_status;
+	public boolean ismaritalStatus() {
+		return maritalStatus;
 	}
 
-	public void setMarital_status(boolean marital_status) {
-		this.marital_status = marital_status;
+	public void setmaritalStatus(boolean maritalStatus) {
+		this.maritalStatus = maritalStatus;
 	}
 
-	public boolean isValid_license() {
-		return valid_license;
+	public boolean isvalidLicense() {
+		return validLicense;
 	}
 
-	public void setValid_license(boolean valid_license) {
-		this.valid_license = valid_license;
+	public void setvalidLicense(boolean validLicense) {
+		this.validLicense = validLicense;
 	}
 
-	public double getBase_premium() {
-		return base_premium;
+	public double getbasePremium() {
+		return basePremium;
 	}
 	
-	public void setBase_premium(double base_premium) {
-		this.base_premium = base_premium;
+	public void setbasePremium(double basePremium) {
+		this.basePremium = basePremium;
 	}
 	
-	public int validarEdad(String variable) { // validate the # of age
+	/**
+	 * Method to validate age.
+	 * @param variable represent variable
+	 * @return Integer
+	 * @throws Exception when variable is null
+	 */
+	
+	public static int validarEdad(String variable) {
 		try {
-	    	 Integer.parseInt(variable);
-	    	 return 0;    	 	    	
-	    }catch(NumberFormatException ex) {
+	    	 return Integer.parseInt(variable); 	 	    	
+	    } catch (NumberFormatException ex) {
 	   	    return -1;
 	    }
 		
@@ -101,5 +115,4 @@ public class CarInsurance {
 	
 		
 }
-
 
