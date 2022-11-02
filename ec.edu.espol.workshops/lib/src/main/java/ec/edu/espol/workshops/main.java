@@ -70,7 +70,6 @@ public class main {
 						
 					
 				CarInsurance test1 = new CarInsurance(Integer.parseInt(age), sex, marital,license);
-				System.out.println(test1);
 				System.out.println(test1.calcularBase());
 				
 			
