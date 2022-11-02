@@ -6,7 +6,7 @@ import io.cucumber.java.en.When;
 import static org.junit.Assert.*;
 
 public class StepsDefs {
-
+//
  private int actualAnswer;
  public CarInsurance carInsurance= new CarInsurance (23, 'F', false, true);
  
