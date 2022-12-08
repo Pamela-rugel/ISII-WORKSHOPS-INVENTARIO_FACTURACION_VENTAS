@@ -40,7 +40,7 @@ public class CarInsurance {
 	 */
 	
 	public double calcularBase() {
-		if (this.age < 80 && this.validLicense) {
+		if (this.age < 80 && this.age >= 18 && this.validLicense) {
 			if (this.sex == 'M' && !this.maritalStatus && this.age < 25) {
 				this.basePremium += 1500;
 			}
@@ -113,6 +113,6 @@ public class CarInsurance {
 		
 	}
 	
-		
+
 }
 
