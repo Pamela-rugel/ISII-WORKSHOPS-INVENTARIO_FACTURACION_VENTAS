@@ -11,7 +11,7 @@ public class CarInsurance {
 	private char sex;
 	private boolean maritalStatus;
 	private boolean validLicense;
-	private double basePremium = 600;	
+	private double basePremium = 500;	
 	/**
 	 
 	 * Constructor for car insurance class.
