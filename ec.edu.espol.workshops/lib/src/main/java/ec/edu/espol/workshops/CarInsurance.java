@@ -40,9 +40,9 @@ public class CarInsurance {
 				validLicense=sn.nextLine();
 				while(!validLicense.equals("true") && !validLicense.equals("false") ) {
 					System.out.println("Invalid, Do you have a driver's license? true/false:\n");
-					validLicense=sn.nextLine();
+					validLicense=sn.nextLine();	
 				}
-				double basePremium = 500;	
+				int basePremium = 500;	
 				if (Integer.parseInt(age) < 80 && Integer.parseInt(age) >= 18 && validLicense.equals("true")) {
 					if (sex == 'M' && !maritalStatus.equals("true") && Integer.parseInt(age) < 25) {
 						basePremium += 1500;
@@ -53,13 +53,12 @@ public class CarInsurance {
 					if (Integer.parseInt(age) >= 45 && Integer.parseInt(age) < 65) {
 						basePremium -= 100;
 					}
-					
 				}else {
 					basePremium=-1;
 				}
 				System.out.println("");
 		        System.out.println("Premiunm Car Insurance:");
-		        System.out.println("$"+basePremium);	
+		        System.out.println(""+basePremium);	
 	}
 	
 	private static boolean isInteger(String text) {
