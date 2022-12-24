@@ -7,9 +7,9 @@ import java.util.Scanner;
  * @author Dennisse Aguirre, Pamela Rugel, Alejandra Quimi
  *
  */
-
 public class CarInsurance {
-	
+	private CarInsurance() {
+    }
 	public static void main (String [ ] args) {
 		
 				String age;
@@ -19,7 +19,7 @@ public class CarInsurance {
 				Scanner sn=new Scanner(System.in);
 				System.out.println("Enter age:\n");
 				age=sn.nextLine();
-				while(isInteger(age)==false || Integer.parseInt(age)<0) {
+				while(isInteger(age)==false) {
 					System.out.println("Invalid age, please re-enter your age:\n");
 					age=sn.nextLine();	
 				}
@@ -50,7 +50,7 @@ public class CarInsurance {
 					else if (sex == 'F' || maritalStatus.equals("true")) {
 						basePremium -= 200;
 					}
-					if (Integer.parseInt(age) >= 45 && Integer.parseInt(age) < 65) {
+					if (Integer.parseInt(age) > 45 && Integer.parseInt(age) < 65) {
 						basePremium -= 100;
 					}
 				}else {
