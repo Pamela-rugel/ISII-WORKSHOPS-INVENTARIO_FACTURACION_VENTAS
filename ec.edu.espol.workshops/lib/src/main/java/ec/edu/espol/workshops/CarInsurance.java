@@ -47,7 +47,14 @@ public class CarInsurance {
 					if (sex == 'M' && !maritalStatus.equals("true") && Integer.parseInt(age) < 25) {
 						basePremium += 1500;
 					}
-					else if (sex == 'F' || maritalStatus.equals("true")) {
+					
+					if (maritalStatus.equals("true") && Integer.parseInt(age) > 30 && Integer.parseInt(age) < 60) {
+						basePremium -= 50;
+					}
+					if (!maritalStatus.equals("true") && sex == 'F' &&  Integer.parseInt(age) > 60) {
+						basePremium -= 50;
+					    }
+					if (sex == 'F' || maritalStatus.equals("true")) {
 						basePremium -= 200;
 					}
 					if (Integer.parseInt(age) >= 45 && Integer.parseInt(age) < 65) {
@@ -69,6 +76,8 @@ public class CarInsurance {
 	       return false;
 	    }
 	}
+	
+	
 	
 
 }
