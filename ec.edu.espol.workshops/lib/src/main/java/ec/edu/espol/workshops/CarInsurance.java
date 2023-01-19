@@ -64,7 +64,7 @@ public class CarInsurance {
 					basePremium=-1;
 				}
 				System.out.println("");
-		        System.out.println("Premiunm Car Insurance:");
+		        System.out.println("Premium Car Insurance:");
 		        System.out.println(""+basePremium);	
 	}
 	
